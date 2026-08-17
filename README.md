@@ -19,7 +19,8 @@ This project is the direct follow-up to [soxx-semiconductor-analysis](https://gi
 ## Key Findings
 
 - **In a steadily uptrending market, simply buying and holding beats this strategy outright.** In the SOXX 20/60 base case, $100k in buy-and-hold grew to $336.5k while the same $100k traded through the strategy only reached $172.4k over the same period (+236.50% vs. +72.38%) — buy-and-hold outperforms the strategy in 6 of the 7 configurations tested overall.
-![SOXX 20/60 Base Case Cumulative Returns](images/soxx_20_60.png)
+
+![SOXX 20/60 Base Case Cumulative Returns](images/SOXX_20_60.png)
 *Backtest vs SOXX buy-and-hold benchmark, full period 2021–2026.*
 
 - **The strategy's one real strength — cutting losses during a crash — gets erased by the same lag that hurts it in uptrends.** In the two corrections where the market fell hard (2024–25, DeepSeek), the dead-cross exit did limit the drawdown compared to buy-and-hold. But because the signal is slow to turn back on, the strategy stayed in cash through each recovery and still ended the window behind buy-and-hold.
@@ -74,7 +75,7 @@ Note on the end date: main.py asks for 2026-07-30 as the end date, but QuantConn
 - **Baseline (buy-and-hold) beat the strategy in 6 of 7 runs.** Only the (50,200) parameter combination outperformed its own baseline, and it did so on a sample of just 7 trades — this looks more like a single fortunate combination on this specific window than a robust edge (see Limitations).
 - **Strategy underperformed baseline in all three isolated regime windows, and the same pattern shows up twice.** In the 2022 correction, both were positive but the strategy captured less of the gain (+1.18% vs. +3.75%). In the 2024–25 correction and the DeepSeek selloff, the same failure mode repeats: because the signal is a lagging indicator, the prior dead cross blocks the sharpest part of the plunge (strategy trough −27.7% vs. baseline's −33.5% in the 2024–25 case; −8% vs. −29% in DeepSeek), but that same lag delays re-entry once the market turns, so the strategy misses each sharp recovery and ends the window behind buy-and-hold (−10.61% vs. +5.58%, and −7.46% vs. −3.82%, respectively).
 
-![SOXX 20/60 2024–25 Correction Cumulative Returns](images/soxx_2024_2025.png)
+![SOXX 20/60 2024–25 Correction Cumulative Returns](images/SOXX_2024_2025.png)
 *Backtest vs SOXX benchmark, June 2024–August 2025. The strategy posted an outright loss (−10.61%) while the benchmark ended positive (+5.58%), even though the benchmark fell further at its own trough.*
 
 ![SOXX 20/60 DeepSeek Period Cumulative Returns](images/SOXX_DeepSeek_period.png)
